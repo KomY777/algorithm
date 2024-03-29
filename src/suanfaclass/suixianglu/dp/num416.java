@@ -8,5 +8,6 @@ import java.util.Arrays;
 public class num416 {
     public boolean canPartition(int[] nums) {
         int sum = Arrays.stream(nums).sum();
+        return false;
     }
 }
