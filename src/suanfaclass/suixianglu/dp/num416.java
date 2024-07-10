@@ -8,6 +8,18 @@ import java.util.Arrays;
 public class num416 {
     public boolean canPartition(int[] nums) {
         int sum = Arrays.stream(nums).sum();
-        return false;
+        if(sum % 2 == 1)return false;
+        int[] dp = new int[nums.length+1];
+        dp[0]=sum/2;
+        for (int i = 0; i < nums.length; i++){
+            if (dp[i]==nums[i])return true;
+            if (dp[i]<nums[i]){
+                dp[i+1]=dp[i];
+            }
+            if (dp[i]>nums[i]){
+                dp[i+1]=dp[i]-nums[i];
+            }
+        }
+        return dp[nums.length]==0;
     }
 }
