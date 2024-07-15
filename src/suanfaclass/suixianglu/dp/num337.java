@@ -24,7 +24,7 @@ public class num337 {
         return Math.max(res[0], res[1]);
     }
 
-    public int[] dfs(TreeNode root) {
+    public static int[] dfs(TreeNode root) {
         int[] dp = new int[2];
         if (root == null) return dp;
         int[] left = dfs(root.left);
