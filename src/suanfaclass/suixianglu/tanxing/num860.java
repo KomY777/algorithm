@@ -8,6 +8,31 @@ package suanfaclass.suixianglu.tanxing;
  */
 public class num860 {
     public static void main(String[] args) {
-        System.out.println(15/10);
+        System.out.println(15 / 10);
     }
+
+    public boolean lemonadeChange(int[] bills) {
+        int[] earn = new int[2];
+        for (int i = 0; i < bills.length; i++) {
+            if (bills[i] == 5) {
+                earn[0]++;
+            } else if (bills[i] == 10) {
+                if (earn[0] <= 0) return false;
+                earn[1]++;
+                earn[0]--;
+            } else {
+                if (earn[1] > 0 && earn[0] > 0) {
+                    earn[0]--;
+                    earn[1]--;
+                } else if (earn[0] >= 3) {
+                    earn[0] -= 3;
+                } else {
+                    return false;
+                }
+            }
+
+        }
+        return true;
+    }
+}
 }
