@@ -35,4 +35,3 @@ public class num860 {
         return true;
     }
 }
-}
